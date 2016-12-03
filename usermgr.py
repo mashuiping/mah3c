@@ -9,7 +9,7 @@ __all__ = ["usermgr"]
 
 class UserMgr:
     def __init__(self):
-        self.users_info_file_path = '/etc/mah3c'
+        self.users_info_file_path = '/etc/oh3c'
         self.cf = ConfigParser.ConfigParser()
         self.cf.read(self.users_info_file_path)
        
