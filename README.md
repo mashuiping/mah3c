@@ -19,7 +19,7 @@ winscp
 ### 4) 开机自启
 ## 2. Linux 平台
 ```bash
-$ cd src
+$ cd mah3c
 $ python mah3c
 ```
 
