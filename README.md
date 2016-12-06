@@ -13,8 +13,7 @@ h3c  authentication for SYSU(east campus).
 putty
 winscp
       
-### 2) 安装python-mini
-
+### 2) 安装python-mini运行opkg
 ### 3) 安装mah3c并配置
 ### 4) 开机自启
 ## 2. Linux 平台
