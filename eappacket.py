@@ -21,7 +21,7 @@ EAP_SUCCESS = 3
 EAP_FAILURE = 4
 
 # packet info followed by EAP_RESPONSE
-# 1       Identity
+
 # 2       Notification
 # 3       Nak (Response only)
 # 4       MD5-Challenge

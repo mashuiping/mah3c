@@ -50,9 +50,7 @@ class EAPAuth:
 
     def send_response_md5(self, packet_id, md5data):
         md5 = self.login_info[1][0:16]
-        print self.login_info[4]
         if self.login_info[4] == '0':
-            print self.login_info[4]
             if len(md5) < 16:
                 md5 = md5 + '\x00' * (16 - len(md5))
             chap = []
@@ -62,12 +60,6 @@ class EAPAuth:
             eap_packet = self.ethernet_header + get_EAPOL(EAPOL_EAPPACKET, get_EAP(EAP_RESPONSE, packet_id, EAP_TYPE_MD5, resp))
         else:
             chap = bytes((chr(packet_id) + md5 + md5data))
-            # m = hashlib.md5()
-            # m.update(chap)
-            # print ("myMD5" + md5hash(chap))
-            # print ("hiMD5" + m.hexdigest())
-            # print (unhexdigest(md5hash(chap)))
-            # print (m.digest())
             resp = chr(len(md5data)) + ''.join(unhexdigest(md5hash(chap))) + self.login_info[0]
             eap_packet = self.ethernet_header + get_EAPOL(EAPOL_EAPPACKET, get_EAP(EAP_RESPONSE,
                                                                                    packet_id,
